@@ -1,3 +1,5 @@
+'use client';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black relative overflow-hidden">
@@ -87,9 +89,8 @@ export default function Home() {
               className="relative group cursor-pointer"
               style={{ animation: `slideIn 0.8s ease-out ${i * 0.1}s both` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br opacity-20 group-hover:opacity-40 transition-opacity duration-300" 
-                   style={{ background: `linear-gradient(135deg, var(--tw-gradient-stops))` }}
-                   className={`bg-gradient-to-br ${stat.color}`} />
+              <div className={`absolute inset-0 bg-gradient-to-br opacity-20 group-hover:opacity-40 transition-opacity duration-300 ${stat.color}`} 
+                   style={{ background: `linear-gradient(135deg, var(--tw-gradient-stops))` }} />
               <div className="relative border-2 border-white/20 p-8 backdrop-blur-sm group-hover:border-white/40 transition-all duration-300">
                 <div className="text-6xl font-black text-white mb-2" style={{ fontFamily: '"Space Mono", monospace' }}>
                   {stat.value}
@@ -147,7 +148,7 @@ export default function Home() {
             </h2>
             {[
               { icon: '🚀', text: '12 humans walked on Luna (1969-1972)', highlight: '12' },
-              { icon: '🌊', text: 'Gravitational pull creates Earth's tides', highlight: 'tides' },
+              { icon: '🌊', text: 'Gravitational pull creates Earth\'s tides', highlight: 'tides' },
               { icon: '⚖️', text: 'Surface gravity is 1/6th of Earth', highlight: '1/6' },
               { icon: '🌡️', text: 'Temperature swings: -173°C to +127°C', highlight: '300°C' },
             ].map((fact, i) => (
