@@ -1,6 +1,14 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <main className="min-h-screen bg-black relative overflow-hidden">
       {/* Noise texture overlay */}
@@ -13,7 +21,7 @@ export default function Home() {
 
       {/* Dynamic star field */}
       <div className="absolute inset-0">
-        {[...Array(200)].map((_, i) => {
+        {mounted && [...Array(200)].map((_, i) => {
           const size = Math.random() * 3;
           const delay = Math.random() * 5;
           const duration = 2 + Math.random() * 3;
